@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { postUrlShortener, getShortenedPage, redirectToShortLink } from "../controllers/postShortener.controller.js";
+import { saveLinks } from "../models/shortner.modles.js";
+import { loadLinks } from "../models/shortner.modles.js";
 
 const router = Router();
 
