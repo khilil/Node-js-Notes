@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 10%;
+      }
+      .BoxContainer {
+        /* border: 1px solid black; */
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+      }
+      ul {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .box {
+        list-style: none;
+        padding: 10px;
+        /* border: 1px solid black; */
+        background-color: #f4f4f4;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+      }
+
+      li p{
+        padding: 2px;
+      }
+      samp {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('navbar') %> <!--- This line includes the navbar.ejs file --->
+    <section class="container">
+      <h1>Students List</h1>
+      <div class="BoxContainer">
+        <ul>
+          <% students.map(student => {%>
+          <li class="box">
+            <p><samp> Student Id</samp> : <%= student.id %></p>
+            <p><samp>Name </samp>: <%= student.name %></p>
+            <p><samp> age</samp> : <%= student.age %></p>
+            <p><samp>grade </samp> : <%= student.grade %></p>
+            <p><samp>city</samp> : <%= student.city %></p>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+    <%- include('footer') %> <!--- This line includes the footer.ejs file --->
+  </body>
+</html>
